@@ -1,0 +1,252 @@
+<html>
+
+
+
+
+
+
+<body>
+
+
+
+</body>
+
+
+<script>
+
+
+//https://www.youtube.com/shorts/Nck_2DyxZdA, https://www.youtube.com/watch?v=F6j_V6FUYTI
+
+const albums = [{
+id: 1,
+name: "Sisterhood",
+artist: "Lucy Bedroque",
+cover: "albums/Sisterhood/cover.png",
+songs: [{
+    id: 1,
+    tracknum: 1,
+    name: "GLUTGIRL66",
+
+    duration: "2:32",
+    source: "albums/Sisterhood/01. GLUTGIRL66.ogg"
+
+},
+{
+ id: 2,
+    tracknum: 2,
+    name: "SORORITY",
+
+    duration: "3:20",
+    source: "albums/Sisterhood/02. SORORITY.ogg"
+},
+{
+ id: 3,
+    tracknum: 3,
+    name: "TAKE ME BACK",
+
+    duration: "3:20",
+    source: "albums/Sisterhood/03. TAKE ME BACK.ogg"
+},
+{
+ id: 4,
+    tracknum: 4,
+    name: "04. WEEP TODAY",
+
+    duration: "3:20",
+    source: "albums/Sisterhood/04. WEEP TODAY.ogg"
+},
+{
+ id: 5,
+    tracknum: 5,
+    name: "05. WALLS OF JERICHO",
+
+    duration: "3:20",
+    source: "albums/Sisterhood/05. WALLS OF JERICHO.ogg"
+},
+{
+ id: 6,
+    tracknum: 6,
+    name: "06. HYDROXYCUT (TAKE IT ALL)",
+
+    duration: "3:20",
+    source: "albums/Sisterhood/06. HYDROXYCUT (TAKE IT ALL).ogg"
+},
+{
+ id: 7,
+    tracknum: 7,
+    name: "07. À QUI DE DROIT",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/07. À QUI DE DROIT.ogg"
+},
+{
+ id: 8,
+    tracknum: 8,
+    name: "08. MADAME LUCY",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/08. MADAME LUCY.ogg"
+},
+{
+ id: 9,
+    tracknum: 9,
+    name: "09. KELLY KELLY",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/09. KELLY KELLY.ogg"
+},
+{
+ id: 10,
+    tracknum: 10,
+    name: "10. USE YOUR WINGS",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/10. USE YOUR WINGS.ogg"
+},
+{
+ id: 11,
+    tracknum: 11,
+    name: "11. INFINITUDE__UROBOROS",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/11. INFINITUDE__UROBOROS.ogg"
+},
+{
+ id: 12,
+    tracknum: 12,
+    name: "12. SISTERHOOD (LOVE,HER)",
+    
+    duration: "3:20",
+    source: "albums/Sisterhood/12. SISTERHOOD (LOVE,HER).ogg"
+}
+
+
+
+
+]
+
+}];
+
+
+
+localStorage.setItem("albums", 
+JSON.stringify(albums)
+)
+
+
+const albumObj = JSON.parse(localStorage.getItem("albums"));
+
+var sisterhood = albumObj[0];
+alert(sisterhood.name);
+
+
+
+
+function cover(album){
+var cover = document.createElement("img");
+
+ cover.setAttribute("src", album.cover);
+ cover.setAttribute("height","500px"); 
+cover.setAttribute("width","500px"); 
+
+document.body.appendChild(cover);
+
+}
+
+
+cover(sisterhood);
+
+
+var sisterhoodsongs = sisterhood.songs;
+
+
+function crearObjetoCancion(song){
+var audio = document.createElement("audio");
+//audio.setAttribute("controls","controls");
+audio.controls = "autoplay";
+ audio.setAttribute("src",song.source);
+return audio;
+//document.body.appendChild(audio);
+}
+
+
+
+
+function albumCanciones(songs){
+   
+var Div = document.createElement('div');
+        Div.id = 'DivId';
+     
+for(let i = 0; i < songs.length; i++) {
+    let obj = songs[i];
+    //cancion(obj);
+Div.appendChild(crearObjetoCancion(obj));
+}
+
+document.body.appendChild(Div);
+
+}
+
+
+albumCanciones(sisterhoodsongs);
+
+
+
+
+
+//cancion(glutgirl66);
+
+
+
+
+
+/*/
+
+
+
+
+
+
+function cancion(songObj){
+var audio = document.createElement("audio");
+//audio.setAttribute("controls","controls");
+audio.controls = "autoplay";
+ audio.setAttribute("src",songObj.source);
+
+document.body.appendChild(audio);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const albumObjtest = JSON.parse(localStorage.getItem("album")[0]);
+
+cancion(songObj);
+
+
+
+
+/*/
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</html>
