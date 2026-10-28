@@ -1,11 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APHEX</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-    
+
+<header class="menu">
+
+    <div class="carrito">
+        <button type="button" class="btn_carro" aria-label="Abre carro">
+        🛒<span id="carro contador">0</span>
+        </button> 
+    </div>
+
+    <div class="buscador">
+        <input type="text" placeholder="Name album">
+        <button type="submit"><i class="busqueda">🔎​</i></button>    
+    </div>
+
+
+    <div class="logo">
+        <h1>APHEX</h1>
+    </div>
+
+</header>
+
+<div class="contenedor_carrusel">
+
+    <div class="carrusel" id="carrusel">
+
+        <div class="imagenes_carrusel">
+            <img src="https://media.istockphoto.com/id/1971124912/es/foto/golden.jpg?s=612x612&w=0&k=20&c=BSBFISvYmki-AxDQEQxCTh2M6qHmSvwk-Lncp72S7uY=" alt="Imagen 1">
+        </div>
+
+        <div class="imagenes_carrusel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYD2kJNb0xa-95Wr9EPZvMMx1U7v7ntcFoGQnk_dKYPiFXqBwQfdc7cK9P&s=10" alt="Imagen 2">
+        </div>
+
+        <div class="imagenes_carrusel">
+            <img src="https://tn.com.ar/resizer/v2/perros-los-preferidos-de-los-humanos-foto-adobe-stock-4C5YYYXQVRGHFBQIA6YMITQI6A.png?auth=3be64592f1d21fdf5bb00491b6fcaacccb3950d2e46e0b86d7c7ecdade8fc2cf&width=1440" alt="Imagen 3">
+        </div>
+
+        <div class="imagenes_carrusel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsVN33uCN5FtUorvTWEv8c0tZnfmcSXFZHcOtSar4wIJe3JB7Pfe3SDw&s=10" alt="Imagen 4">
+        </div>
+
+    </div>
+
+</div>
+
+<h2 class="titulo">¡¡RANKING DE LA SEMANA!!</h2>
+
+    <div class="rankings">
+
+    <!-- TABLA IZQUIERDA -->
+    <div class="tabla">
+
+        <h2>TOP CANCIONES</h2>
+
+        <div class="contenedor_top">
+            <span class="numero">1</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">2</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">3</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">4</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">5</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">6</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">7</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">8</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">9</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">10</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+    </div>
+
+
+    <div class="tabla">
+
+        <h2>TOP ÁLBUMES</h2>
+
+        <div class="contenedor_top">
+            <span class="numero">1</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">2</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">3</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">4</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">5</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">6</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">7</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">8</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">9</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+        <div class="contenedor_top">
+            <span class="numero">10</span>
+            <img src="https://yt3.googleusercontent.com/EPDnuk7HrRqx6fIzsP5xZsmzSGClt8egqp8q3i969837E8SSwG0vnf2zHQLEIlrSyIq3PvwFba9Qoh2B=w544-h544-l90-rj">
+            <div class="columna_info">
+                <h4>Nombre tema</h4>
+                <p>Artista</p>
+                <p>1.500.000 reproducciones</p>
+            </div>
+            <span class="duracion">5:03</span>
+        </div>
+
+    </div>
+
+    </div>
+
+    <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script src="xd.js"></script>
+
 </body>
 </html>
