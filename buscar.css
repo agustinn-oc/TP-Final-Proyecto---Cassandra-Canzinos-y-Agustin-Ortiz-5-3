@@ -1,0 +1,59 @@
+@media (min-width: 600px) {
+  .header {grid-area: 1 / span 6;}
+  .menu {grid-area: 2 / span 1;}
+  .content {grid-area: 2 / span 4;}
+  .facts {grid-area: 2 / span 1;}
+  .footer {grid-area: 3 / span 6;}
+}
+
+.menu{
+   position: sticky;
+   top: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 40px;
+
+    background:antiquewhite;
+   
+ box-shadow: 0px 10px 30px  white;
+}
+
+.buscador{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+
+.trackinfobuscar{
+
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+float:right
+}
+
+button{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+border-color: aliceblue;
+float:right
+}
+
+
+
+.covercancionbuscar{
+border-style:dotted;
+border-color: white;
+}
+
+
+.canciondentrodiv
+{
+    background-color: antiquewhite;
+      display: inline-flex;
+    margin: 10px;
+width: 600px
+    
+}
+
