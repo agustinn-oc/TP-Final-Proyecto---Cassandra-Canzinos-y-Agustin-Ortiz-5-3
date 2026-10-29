@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+body{
+    background: linear-gradient(antiquewhite,rgb(196, 176, 148));
+    background-size: cover ;
+    background-position:center ;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.formulario{
+    width: 55%;
+    min-height: 70%;
+    align-items: center;
+    gap: 18px;
+    padding: 0 0 0 50px;
+    border-radius: 12px;
+    background: rgb(163, 146, 122);
+    color: white;
+    transition: 0.3s;
+
+}
+.columna h3{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.columna input{
+
+}
+
+
+</style>
+</head> 
+<body>
+    <form action="select" id="Informacion" class="contenedorinfo" ></form>
+        <div class="formulario">
+            <h2>Actualizar método de pago guardado</h2>
+
+            <h3>Seleccione el metodo de pago </h3>
+            <select name="select" id="OPCPagos">
+            <option value="opcionPago">Mastercard</option>
+            <option value="opcionPago">Visa</option>
+            </select>
+            <div class="columna">
+            <h3>Numero de Tarjeta</h3>
+            <input type="number" > 
+            <h3>Fecha de caducidad y codigo de seguridad</h3>
+            <input type="month" min="206-01">
+            <input type="number" min = "1" max = "999">
+            </div>
+            
+
+            <h2>Informacion de facturacion</h2>
+            <h3>Nombre</h3>
+            <input type="text">
+            <h3>Apellido</h3>
+            <input type="text">
+            <h3>Localidad</h3>
+            <input type="text">
+            <h3>Direccion de facturacion</h3>
+            <input type="text">
+            <h3>Código postal o zip</h3>
+            <input type="number">
+            <h3>Telefono</h3>
+            <input type="tel">
+        </div>   
+    </form>
+</body>
+</html>
