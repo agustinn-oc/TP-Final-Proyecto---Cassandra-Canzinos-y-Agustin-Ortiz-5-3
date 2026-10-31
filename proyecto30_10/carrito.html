@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APHEX</title>
+    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+<header class="menu">
+
+    <form id="volveralmenu" action="index.html">
+    <div class="logo">
+        <a href="index.html"><h1>APHEX</h1></a>
+    </div>
+    </form> 
+    
+    <div class="buscador">
+       
+    <nav>
+    |
+    <a href="buscarAlbums.html"> Buscar albums!</a> |
+    <a href="buscartemas.html">Buscar temas!</a> |
+    </nav>    
+    </div>
+
+
+
+</header>
+
+
+
+<body>
+<h4> Lista de compras:</h4>
+ <h2>(Advertencia! Aquí se muestran todos los temas comprados, si usted compró un album se mostrarán todos los temas del mismo) </h2>
+
+
+<div id ='mostrador'>
+    </div>
+
+<form id="mandarainfocompra" action="pago.html">
+
+  <input type="submit" value="Continuar con la compra">
+</form> 
+
+ <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+            <ol>
+                <ul>Mail: AphexT@gmail.com</ul>
+                <ul>Contacto: 11 9999-0100</ul>
+            </ol>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+</body>
+
+
+
+<script>
+
+
+
+const albums = JSON.parse(localStorage.getItem("albums"));
+
+
+
+buscartema();
+
+function eliminarCarrito(idcancion){ 
+   var count = JSON.parse(localStorage.getItem("cancionescarrito"));
+    
+count.splice(idcancion, 9999);
+
+    localStorage.setItem("cancionescarrito", JSON.stringify(count)); 
+
+ buscartema();
+  
+}
+
+
+function buscartema(){
+     var idlist = JSON.parse(localStorage.getItem("cancionescarrito"));
+    document.getElementById("mostrador").innerHTML = "";
+      var busqueda;
+    if (idlist.length == 1){
+        document.getElementById("mostrador").innerHTML = "No hay items comprados todavia....";
+    } else {
+         idlist = JSON.parse(localStorage.getItem("cancionescarrito"));
+            idlist.forEach(idx => {
+               albums.forEach(album => {
+                var canciones = album.songs;
+                canciones.forEach(cancion => {
+                    if (cancion.id == parseInt(idx)){
+                        crearCancionesObjeto(album,cancion)
+                    }       
+                  
+                });
+            }); 
+
+        });
+    }
+    
+}
+
+
+function cover(AlbumObj){
+    
+    var cover = document.createElement("img");
+    cover.setAttribute("src", AlbumObj.cover);
+    cover.setAttribute("alt", (AlbumObj.name + "- " + AlbumObj.artist + " - Portada de album"));
+    cover.setAttribute("height","200px"); 
+    cover.setAttribute("width","200px"); 
+    cover.setAttribute("class", 'covercancionbuscar');
+    return cover;
+}
+
+
+
+function crearCancionesObjeto(albumObj,songObj){
+
+
+var Div = document.createElement('div');
+       
+
+        Div.setAttribute("class", "tracks_listados_buscar");
+        
+            
+            var canciondentrodiv = document.createElement('div');
+            canciondentrodiv.setAttribute("class", 'canciondentrodiv');
+
+            canciondentrodiv.appendChild(cover(albumObj));
+            
+
+            var info = document.createElement("p");
+                info.setAttribute("class", 'trackinfobuscar');
+            info.innerHTML = (songObj.name + " <br /> " + albumObj.artist +" <br /> Duración: " + songObj.duration);
+            canciondentrodiv.appendChild(info);
+
+            var idboton = songObj.id;
+
+            var btn = document.createElement("button");
+                btn.setAttribute("class", 'trackinfoagregaralcarrito');
+                btn.setAttribute("id", idboton);
+                btn.setAttribute("style", "width: 120px; height: 80px");
+                btn.setAttribute("onclick", "eliminarCarrito(" + songObj.id + ")")
+                btn.innerHTML = "Eliminar del carrito";
+            canciondentrodiv.appendChild(btn);
+            
+            Div.appendChild(canciondentrodiv);
+
+
+            var divmostrador = document.getElementById("mostrador");
+                divmostrador.appendChild(Div);
+
+         //document.body.appendChild(Div);
+        }
+
+
+
+
+
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

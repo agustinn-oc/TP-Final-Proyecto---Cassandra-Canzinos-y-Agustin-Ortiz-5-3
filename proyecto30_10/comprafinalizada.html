@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="comprafinalizada.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<header class="menu"> 
+
+  
+<form id="form-busqueda" class="buscador">
+  <label for="busqueda">Busqueda:</label><br>
+  <input type="text" id="busqueda" name="busqueda" type="search" ><br>
+  <input type="submit" value="Buscar">
+</form> 
+
+
+<form id="volveralmenu" action="index.html">
+  <div class="logo">
+    <a href="index.html"><h1>APHEX</h1></a>
+  </div>
+</form>
+
+    </header>
+<body>
+    
+<p> Compra realizada! </p>
+<table id="tablaRecibo" class = "tablaRecibo">
+  
+</table>
+
+<p>Elementos comprados: </p>
+<div id ='mostrador'>
+    </div>
+
+
+
+<script>
+
+  const queryString =
+window.location.search;
+
+const params =
+new URLSearchParams(queryString);
+
+var nombre = params.get("nombre");
+var apellido = params.get("apellido");
+var telefono = params.get("telefono");
+var direccion = params.get("direccion");
+var codigoPostal = params.get("codigoPostal");
+var metodoPago = params.get("metodoPago");
+var numeroTarjeta = params.get("numeroTarjeta");
+var fechaCaducidad = params.get("fechaCaducidad");
+var codigoSeguridad = params.get("codigoSeguridad");
+
+var tabla = document.getElementById("tablaRecibo");
+agregaratabla("Nombre completo", (nombre + " " + apellido));
+agregaratabla("Telefono", telefono);
+agregaratabla("Direccion", direccion);
+agregaratabla("Codigo postal", codigoPostal);
+agregaratabla("Metodo de pago ", metodoPago);
+agregaratabla("Numero de tarjeta",numeroTarjeta);
+agregaratabla("Fecha de caducidad", fechaCaducidad);
+agregaratabla("Codigo de seguridad", codigoSeguridad);
+
+
+var listacompra = JSON.parse(localStorage.getItem("cancionescarrito"));
+var listaalbums = JSON.parse(localStorage.getItem("albums"));
+
+listacompra.forEach(element => {
+          listaalbums.forEach(album => {
+             
+              var canciones = album.songs;
+              canciones.forEach(cancion => {
+                  if (cancion.id == parseInt(element)){
+                      agregaratabla(cancion.name + " - " + album.artist , cancion.precio)
+                  }       
+                
+              });
+         
+
+      });
+    
+});
+
+
+
+
+function agregaratabla(var1,var2){
+  var table = document.createElement("tr");
+  var rows = document.createElement("td");
+  rows.innerHTML = var1;
+  table.appendChild(rows);
+  var rows2 = document.createElement("td");
+  rows2.innerHTML = var2;
+  table.appendChild(rows2);
+  tabla.appendChild(table);
+}
+
+
+
+    localStorage.setItem("cancionescarrito", JSON.stringify(0)); 
+</script>
+
+
+
+ <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+            <ol>
+                <ul>Mail: AphexT@gmail.com</ul>
+                <ul>Contacto: 11 9999-0100</ul>
+            </ol>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+
+<header class="menu">
+
+    <div class="carrito">
+   
+        🛒<span id="carro contador"></span>
+          <form id="carritoir" action="carrito.html">
+  <input type="submit" value="Ir al carrito">
+</form> 
+  
+        </button> 
+    </div>
+    
+    <div class="buscador">
+       
+     <nav>
+        |
+    <a href="buscarAlbums.html"> Buscar albums!</a> |
+    <a href="buscartemas.html">Volver a temas!</a> |
+    </nav>    
+    </div>
+
+    <div class="logo">
+        <a href="index.html"><h1>APHEX</h1></a>
+    </div>
+
+
+
+</header>
+
+
+<body>
+
+
+<div class="reproductor">
+
+
+     <div class="info_cancion">
+
+        <h1 id="nombretema">Nombre</h1>
+        <h3 id="nombreartista">Artista</h3>
+        <div class="barraM">
+            <audio id = "reproductoraudio" controls="" src=""></audio>
+        </div>
+    </div>
+
+
+</div>
+
+ <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+            <ol>
+                <ul>Mail: AphexT@gmail.com</ul>
+                <ul>Contacto: 11 9999-0100</ul>
+            </ol>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+
+
+</body>
+
+
+<script>
+
+
+//https://www.youtube.com/shorts/Nck_2DyxZdA, https://www.youtube.com/watch?v=F6j_V6FUYTI
+
+const albums = [{
+id: 1,
+name: "Sisterhood",
+artist: "Lucy Bedroque",
+cover: "albums/Sisterhood/cover.png",
+precio: 12000,
+songs: [{
+    id: 1,
+    tracknum: 1,
+    name: "GLUTGIRL66",
+        precio: 1000,
+    duration: "2:32",
+    source: "albums/Sisterhood/01. GLUTGIRL66.ogg"
+
+},
+{
+ id: 2,
+    tracknum: 2,
+    name: "SORORITY",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/02. SORORITY.ogg"
+},
+{
+ id: 3,
+    tracknum: 3,
+    name: "TAKE ME BACK",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/03. TAKE ME BACK.ogg"
+},
+{
+ id: 4,
+    tracknum: 4,
+    name: "04. WEEP TODAY",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/04. WEEP TODAY.ogg"
+},
+{
+ id: 5,
+    tracknum: 5,
+    name: "05. WALLS OF JERICHO",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/05. WALLS OF JERICHO.ogg"
+},
+{
+ id: 6,
+    tracknum: 6,
+    name: "06. HYDROXYCUT (TAKE IT ALL)",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/06. HYDROXYCUT (TAKE IT ALL).ogg"
+},
+{
+ id: 7,
+    tracknum: 7,
+    name: "07. À QUI DE DROIT",
+        precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/07. À QUI DE DROIT.ogg"
+},
+{
+ id: 8,
+    tracknum: 8,
+    name: "08. MADAME LUCY",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/08. MADAME LUCY.ogg"
+},
+{
+ id: 9,
+    tracknum: 9,
+    name: "09. KELLY KELLY",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/09. KELLY KELLY.ogg"
+},
+{
+ id: 10,
+    tracknum: 10,
+    name: "10. USE YOUR WINGS",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/10. USE YOUR WINGS.ogg"
+},
+{
+ id: 11,
+    tracknum: 11,
+    name: "11. INFINITUDE__UROBOROS",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/11. INFINITUDE__UROBOROS.ogg"
+},
+{
+ id: 12,
+    tracknum: 12,
+    name: "12. SISTERHOOD (LOVE,HER)",
+       precio: 1000, 
+    duration: "3:20",
+    source: "albums/Sisterhood/12. SISTERHOOD (LOVE,HER).ogg"
+}]
+
+},
+{
+id: 2,
+name: "Selected Ambient Works 85-92",
+artist: "Aphex Twin",
+cover: "albums/saw8592/cover.jpg",
+precio: 26000,
+songs: [{
+    id: 13,
+    tracknum: 1,
+    name: "Xtal",
+    precio: 2000,
+    duration: "2:32",
+    source: "albums/saw8592/01. Aphex Twin - Xtal.ogg"
+
+},
+{
+ id: 14,
+    tracknum: 2,
+    name: "Tha",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/02. Aphex Twin - Tha.ogg"
+},
+{
+ id: 15,
+    tracknum: 3,
+    name: "Pulsewidth",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/03. Aphex Twin - Pulsewidth.ogg"
+},
+{
+ id: 16,
+    tracknum: 4,
+    name: "Ageispolis",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/04. Aphex Twin - Ageispolis.ogg"
+},
+{
+ id: 17,
+    tracknum: 5,
+    name: "I",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/05. Aphex Twin - I.ogg"
+},
+{
+ id: 18,
+    tracknum: 6,
+    name: "Green Calx",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/06. Aphex Twin - Green Calx.ogg"
+},
+{
+ id: 19,
+    tracknum: 7,
+    name: "Heliosphan",
+    precio: 2000,   
+    duration: "3:20",
+    source: "albums/saw8592/07. Aphex Twin - Heliosphan.ogg"
+},
+{
+ id: 20,
+    tracknum: 8,
+    name: "We Are the Music Makers",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/08. Aphex Twin - We Are the Music Makers.ogg"
+},
+{
+ id: 21,
+    tracknum: 9,
+    name: "Schottkey 7th Path",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/09. Aphex Twin - Schottkey 7th Path.ogg"
+},
+{
+ id: 22,
+    tracknum: 10,
+    name: "Ptolemy",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/10. Aphex Twin - Ptolemy.ogg"
+},
+{
+ id: 23,
+    tracknum: 11,
+    name: "Hedphelym",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/11. Aphex Twin - Hedphelym.ogg"
+},
+{
+ id: 24,
+    tracknum: 12,
+    name: "Delphium",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/12. Aphex Twin - Delphium.ogg"
+},
+{
+ id: 25,
+    tracknum: 13,
+    name: "Actium",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/13. Aphex Twin - Actium.ogg"
+}]
+
+}];
+
+
+localStorage.setItem("albums", 
+JSON.stringify(albums)
+)
+
+
+const albumObj = JSON.parse(localStorage.getItem("albums"));
+
+
+    // Get the full URL query string (e.g., "?name=John&age=30")
+const queryString = window.location.search;
+    
+    // Parse the query string into a URLSearchParams object
+const params = new URLSearchParams(queryString);
+ 
+var idAlbum = parseInt(params.get('idAlbum')); 
+
+var albumdesignado= albumObj.find(a => a.id === idAlbum);
+
+
+
+
+function cover(album){
+var cover = document.createElement("img");
+                                                                                                                                              
+ cover.setAttribute("src", album.cover);
+ cover.setAttribute("height","500px"); 
+cover.setAttribute("width","500px"); 
+
+document.body.appendChild(cover);
+
+}
+
+function crearObjetoCancion(song){
+var audio = document.createElement("audio");
+//audio.setAttribute("controls","controls");
+audio.controls = "autoplay";
+ audio.setAttribute("src",song.source);
+return audio;
+//document.body.appendChild(audio);
+}
+
+function albumCanciones(songs){
+   
+var Div = document.createElement('div');
+        Div.id = 'DivId';
+     
+for(let i = 0; i < songs.length; i++) {
+    let obj = songs[i];
+    //cancion(obj);
+Div.appendChild(crearObjetoCancion(obj));
+}
+
+document.body.appendChild(Div);
+
+}
+
+
+cover(albumdesignado);
+
+var albumdesignadocanciones = albumdesignado.songs;
+
+albumCanciones(albumdesignadocanciones);
+
+
+
+
+
+//cancion(glutgirl66);
+
+
+
+
+
+/*/
+
+
+
+
+
+
+function cancion(songObj){
+var audio = document.createElement("audio");
+//audio.setAttribute("controls","controls");
+audio.controls = "autoplay";
+ audio.setAttribute("src",songObj.source);
+
+document.body.appendChild(audio);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const albumObjtest = JSON.parse(localStorage.getItem("album")[0]);
+
+cancion(songObj);
+
+
+
+
+/*/
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</html>
