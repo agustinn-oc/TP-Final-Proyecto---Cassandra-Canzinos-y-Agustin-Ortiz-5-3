@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="css/estilo.css">
+
+</head> 
+<header class="menu"> 
+
+
+
+<form id="volveralmenu" action="index.html">
+  <div class="logo">
+    <a href="index.html"><h1>APHEX</h1></a>
+  </div>
+</form>
+
+    </header>
+<body>
+    
+        <div class="formulario">
+    <form action="comprafinalizada.html" id="Informacion" class="contenedorinfo" >
+
+            <h2>Actualizar método de pago guardado</h2>
+
+            <h3>Seleccione el metodo de pago </h3>
+            <select name="metodoPago" id="OPCPagos">
+            <option value="opcionPago">Mastercard</option>
+            <option value="opcionPago">Visa</option>
+            </select>
+            <div class="columna">
+            <h3>Numero de Tarjeta</h3>
+            <input type="number" name="numeroTarjeta" required> 
+            <h3>Fecha de caducidad y codigo de seguridad</h3>
+            <input name="fechaCaducidad" type="month" min="2026-01"required>
+            <input name= "codigoSeguridad" type="number" min = "1" max = "999" required>
+            </div>
+            
+
+            <h2>Informacion de facturacion</h2>
+            <h3>Nombre</h3>
+            <input name="nombre" type="text"required>
+            <h3>Apellido</h3>
+            <input name="apellido"  type="text"required>
+            <h3>Localidad</h3>
+            <input name="localidad" type="text"required>
+            <h3>Direccion de facturacion</h3>
+            <input name="direccion" type="text"required>
+            <h3>Código postal o zip</h3>
+            <input name="codigoPostal" type="number"required>
+            <h3>Telefono</h3>
+            <input  name="telefono" type="tel" required>
+              <input type="submit" value="Completar compra">
+
+          
+    </form>
+    </div> 
+
+     <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+            <ol>
+                <ul>Mail: AphexT@gmail.com</ul>
+                <ul>Contacto: 11 9999-0100</ul>
+            </ol>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<html>
+<head>
+
+ <link rel="stylesheet" href="css/estilo.css">
+
+    </head>
+
+<header class="menu"> 
+
+  
+<form id="form-busqueda" class="buscador">
+  <label for="busqueda">Busqueda:</label><br>
+  <input type="text" id="busqueda" name="busqueda" type="search" ><br>
+  <input type="submit" value="Buscar">
+</form> 
+
+
+<form id="volveralmenu" action="index.html">
+  <div class="logo">
+    <a href="index.html"><h1>APHEX</h1></a>
+  </div>
+</form>
+
+    </header>
+
+
+<body>
+
+
+
+<div id ='mostrador'>
+    </div>
+
+ <footer class="footer">
+
+    <div class="footer_contenido">
+
+        <div class="footer_columna">
+            <h3>APHEX</h3>
+            <ol>
+                <ul>Mail: AphexT@gmail.com</ul>
+                <ul>Contacto: 11 9999-0100</ul>
+            </ol>
+        </div>
+
+    <div class="footer_copy">
+        © 2026 APHEX. Todos los derechos reservados.
+    </div>
+</footer>
+<script>
+
+
+//inicializar la variable de local storage como una lista, para guardar las ids de las canciones compradas
+    var idlista = JSON.parse(localStorage.getItem('cancionescarrito'));
+if(null === idlista || 0 === idlista)
+{
+     localStorage.setItem("cancionescarrito", JSON.stringify([0])); 
+}
+
+
+
+const albums = [{
+id: 1,
+name: "Sisterhood",
+artist: "Lucy Bedroque",
+cover: "albums/Sisterhood/cover.png",
+precio: 12000,
+songs: [{
+    id: 1,
+    tracknum: 1,
+    name: "GLUTGIRL66",
+        precio: 1000,
+    duration: "2:32",
+    source: "albums/Sisterhood/01. GLUTGIRL66.ogg"
+
+},
+{
+ id: 2,
+    tracknum: 2,
+    name: "SORORITY",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/02. SORORITY.ogg"
+},
+{
+ id: 3,
+    tracknum: 3,
+    name: "TAKE ME BACK",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/03. TAKE ME BACK.ogg"
+},
+{
+ id: 4,
+    tracknum: 4,
+    name: "WEEP TODAY",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/04. WEEP TODAY.ogg"
+},
+{
+ id: 5,
+    tracknum: 5,
+    name: "WALLS OF JERICHO",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/05. WALLS OF JERICHO.ogg"
+},
+{
+ id: 6,
+    tracknum: 6,
+    name: "HYDROXYCUT (TAKE IT ALL)",
+    precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/06. HYDROXYCUT (TAKE IT ALL).ogg"
+},
+{
+ id: 7,
+    tracknum: 7,
+    name: "À QUI DE DROIT",
+        precio: 1000,
+    duration: "3:20",
+    source: "albums/Sisterhood/07. À QUI DE DROIT.ogg"
+},
+{
+ id: 8,
+    tracknum: 8,
+    name: "MADAME LUCY",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/08. MADAME LUCY.ogg"
+},
+{
+ id: 9,
+    tracknum: 9,
+    name: "KELLY KELLY",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/09. KELLY KELLY.ogg"
+},
+{
+ id: 10,
+    tracknum: 10,
+    name: "USE YOUR WINGS",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/10. USE YOUR WINGS.ogg"
+},
+{
+ id: 11,
+    tracknum: 11,
+    name: "INFINITUDE//UROBOROS",
+      precio: 1000,  
+    duration: "3:20",
+    source: "albums/Sisterhood/11. INFINITUDE__UROBOROS.ogg"
+},
+{
+ id: 12,
+    tracknum: 12,
+    name: "SISTERHOOD (LOVE,HER)",
+       precio: 1000, 
+    duration: "3:20",
+    source: "albums/Sisterhood/12. SISTERHOOD (LOVE,HER).ogg"
+}]
+
+},
+{
+id: 2,
+name: "Selected Ambient Works 85-92",
+artist: "Aphex Twin",
+cover: "albums/saw8592/cover.jpg",
+precio: 26000,
+songs: [{
+    id: 13,
+    tracknum: 1,
+    name: "Xtal",
+    precio: 2000,
+    duration: "2:32",
+    source: "albums/saw8592/01. Aphex Twin - Xtal.ogg"
+
+},
+{
+ id: 14,
+    tracknum: 2,
+    name: "Tha",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/02. Aphex Twin - Tha.ogg"
+},
+{
+ id: 15,
+    tracknum: 3,
+    name: "Pulsewidth",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/03. Aphex Twin - Pulsewidth.ogg"
+},
+{
+ id: 16,
+    tracknum: 4,
+    name: "Ageispolis",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/04. Aphex Twin - Ageispolis.ogg"
+},
+{
+ id: 17,
+    tracknum: 5,
+    name: "I",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/05. Aphex Twin - I.ogg"
+},
+{
+ id: 18,
+    tracknum: 6,
+    name: "Green Calx",
+    precio: 2000,
+    duration: "3:20",
+    source: "albums/saw8592/06. Aphex Twin - Green Calx.ogg"
+},
+{
+ id: 19,
+    tracknum: 7,
+    name: "Heliosphan",
+    precio: 2000,   
+    duration: "3:20",
+    source: "albums/saw8592/07. Aphex Twin - Heliosphan.ogg"
+},
+{
+ id: 20,
+    tracknum: 8,
+    name: "We Are the Music Makers",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/08. Aphex Twin - We Are the Music Makers.ogg"
+},
+{
+ id: 21,
+    tracknum: 9,
+    name: "Schottkey 7th Path",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/09. Aphex Twin - Schottkey 7th Path.ogg"
+},
+{
+ id: 22,
+    tracknum: 10,
+    name: "Ptolemy",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/10. Aphex Twin - Ptolemy.ogg"
+},
+{
+ id: 23,
+    tracknum: 11,
+    name: "Hedphelym",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/11. Aphex Twin - Hedphelym.ogg"
+},
+{
+ id: 24,
+    tracknum: 12,
+    name: "Delphium",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/12. Aphex Twin - Delphium.ogg"
+},
+{
+ id: 25,
+    tracknum: 13,
+    name: "Actium",
+    precio: 2000,    
+    duration: "3:20",
+    source: "albums/saw8592/13. Aphex Twin - Actium.ogg"
+}]
+
+}];
+
+document.getElementById("form-busqueda").addEventListener("submit", function(event) {
+    event.preventDefault();
+    //resetea los elementos del mostrador, para ello borra todo el codigo de html que tiene dentro (si no se siguen apilando las busquedas)
+    var element = document.getElementById("mostrador");
+    element.innerHTML = "";
+
+    const form = document.getElementById("form-busqueda");
+    var formData = new FormData(form);
+
+  
+
+
+    var data = formData.get('busqueda');
+    var busqueda = data.toLowerCase();
+    console.log(busqueda);
+
+    albums.forEach(element => {
+        crearCancionesAlbumObjeto(element,busqueda);
+    });
+
+
+
+   
+});
+
+function agregarCarrito(idcancion){ 
+    var count = JSON.parse(localStorage.getItem("cancionescarrito"));
+        
+    count.splice(idcancion, 99);
+
+    if ((count.includes(idcancion)) == false)
+   
+        count.push(parseInt(idcancion));
+        localStorage.setItem("cancionescarrito", JSON.stringify(count)); 
+    
+    
+    }
+
+    localStorage.setItem("albums", 
+    JSON.stringify(albums)
+)
+
+
+const albumsgenerales = JSON.parse(localStorage.getItem("albums"));
+
+
+function cover(AlbumObj){
+    
+    var cover = document.createElement("img");
+
+    cover.setAttribute("src", AlbumObj.cover);
+    cover.setAttribute("alt", (AlbumObj.name + "- " + AlbumObj.artist + " - Portada de album"));
+    cover.setAttribute("height","200px"); 
+    cover.setAttribute("width","200px"); 
+    cover.setAttribute("class", 'covercancionbuscar');
+    return cover;
+}
+
+
+
+function crearCancionesAlbumObjeto(albumObj, busqueda){
+   
+    var albumObjsongs = albumObj.songs;
+
+    var Div = document.createElement('div');
+        
+    Div.setAttribute("class", "tracks_listados_buscar");
+        
+        for(let i = 0; i < albumObjsongs.length; i++) {
+            
+            var canciondentrodiv = document.createElement('div');
+            canciondentrodiv.setAttribute("class", 'canciondentrodiv');
+
+            canciondentrodiv.appendChild(cover(albumObj));
+            
+
+            var info = document.createElement("p");
+                info.setAttribute("class", 'trackinfobuscar');
+            info.innerHTML = (albumObjsongs[i].name + " <br /> " + albumObj.artist +" <br /> Duración: " + albumObjsongs[i].duration);
+            canciondentrodiv.appendChild(info);
+
+            var idboton = (albumObjsongs[i]).id;
+
+            var btn = document.createElement("button");
+                btn.setAttribute("class", 'trackinfoagregaralcarrito');
+                btn.setAttribute("id", idboton);
+                btn.setAttribute("style", "width: 120px; height: 80px");
+                btn.setAttribute("onclick", "agregarCarrito(" + (albumObjsongs[i]).id + ")")
+                btn.innerHTML = "Agregar al carrito";
+            canciondentrodiv.appendChild(btn);
+            
+            var formulario = document.createElement("form");
+            formulario.setAttribute("action", 'escuchartema.html');
+            var btnVer = document.createElement("button");
+            btnVer.setAttribute("class", 'verCancion');
+            btnVer.setAttribute("name", 'idTema');
+            btnVer.setAttribute("type", 'submit');
+                btnVer.setAttribute("value", idboton);
+            btnVer.setAttribute("style", "width: 120px; height: 80px");
+            
+            btnVer.innerHTML = "Escuchar tema";
+            formulario.appendChild(btnVer);
+            canciondentrodiv.appendChild(formulario);
+            
+                
+                var formulario2 = document.createElement("form");
+            formulario2.setAttribute("action", 'escucharalbum.html');
+            var btnVerAlbum = document.createElement("button");
+            btnVerAlbum.setAttribute("class", 'verCancion');
+            btnVerAlbum.setAttribute("name", 'idAlbum');
+            btnVerAlbum.setAttribute("type", 'submit');
+                btnVerAlbum.setAttribute("value", albumObj.id);
+            btnVerAlbum.setAttribute("style", "width: 120px; height: 80px");
+            
+            btnVerAlbum.innerHTML = "Ver album proveniente";
+            formulario2.appendChild(btnVerAlbum);
+            canciondentrodiv.appendChild(formulario2);
+              
+                
+            //verificar si el nombre coincide con lo que busco pero que no sea igual, solo parecido por las primeras letras
+            if (albumObjsongs[i].name.toLowerCase().indexOf(busqueda) !== -1) {
+                Div.appendChild(canciondentrodiv);
+            }
+
+            var divmostrador = document.getElementById("mostrador");
+                divmostrador.appendChild(Div);
+
+        
+        }
+
+        var cancionesdiv = document.querySelectorAll(".canciondentrodiv");
+        if (cancionesdiv.length == 0){
+            document.getElementById("mostrador").innerHTML = "No se ha encontrado ningún tema con ese nombre ;( )";
+    }
+        
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+</html>
